@@ -1,0 +1,12 @@
+steps
+步骤是可以在作业中运行命令的单个任务。 步骤可以是操作或 shell 命令。 作业中的每个步骤在同一运行器上执行，可让该作业中的操作互相共享数据。
+jobs:
+  example-job:
+      steps:
+        - name: Connect to PostgreSQL
+          run: node client.js
+          env:
+            POSTGRES_HOST: postgres
+            POSTGRES_PORT: 5432
+		- name: 运行shell脚本
+		  run: echo("aaa")
